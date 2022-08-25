@@ -1,0 +1,53 @@
+public float power = 0.7f;
+public Transform camera;
+public float slowDownAmount = 1.0f;
+public bool shouldShake = false;
+
+Vector3 startPosition;
+
+
+start
+camera = Camera.main.transform;
+StartPosition = Camera.localPosition;
+
+
+Uptade
+
+if(ShouldShake)
+{
+	camera.localPosiiton = startPosition + Random.insideUnitSphere
+
+}
+
+else
+{
+  	shoulShake = false;
+	camera.localPosition = startPosition;
+}
+
+public AudioSource Scream;
+public GameObject ThePlayer;
+public GameObject flashing;
+public gameObject jumpCam;
+public bool qorxulu = false;
+
+uptade
+
+if horrorappearance
+{
+  
+Scream.Play():
+JumpCam.SetActive(true);
+ThePlayer.SetActive(false);
+Flashing.SetActive(true);
+
+StartCoroutine(again_horroappearance());
+}
+
+IEnumerator again_horroappearance()
+{
+yield new WaitForSecond(1);
+JumpCam.SetActive(false);
+ThePlayer.SetActive(false);
+Flashing.SetActive (false);
+}
