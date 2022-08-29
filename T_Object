@@ -1,3 +1,6 @@
+// This script will help you drop the object down anywhere and is related to the last script which I have published in public named Throw Object.
+
+
 public class T_Object : MonoBehaviour
 {
     Rigidbody rb;
