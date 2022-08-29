@@ -1,1 +1,52 @@
+public class T_Object : MonoBehaviour
+{
+    Rigidbody rb;
+    public bool taken = false;
+    [HideInInspector]
+    public bool hasReseted = false;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+
+    }
+    private void Update()
+    {
+        if (taken == true)
+        {
+            GameObject obj = GameObject.FindGameObjectWithTag("pivot");
+
+            rb.MovePosition(obj.transform.position);
+            rb.MoveRotation(Quaternion.LookRotation(Camera.main.transform.forward));
+            rb.useGravity = false;
+
+        }
+        else
+        {
+            rb.useGravity = true;
+        }
+
+        if (hasReseted == false)
+        {
+            resetForce();
+            hasReseted = true;
+        }
+    }
+
+    public void resetForce()
+    {
+        rb.isKinematic = true;
+        rb.isKinematic = false;
+    }
+
+    public void Force()
+    {
+        rb.AddForce(Camera.main.transform.forward * 10, ForceMode.Impulse);
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        taken = false;
+    }
+}
