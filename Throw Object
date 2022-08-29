@@ -1,3 +1,9 @@
+
+// If you wanna throw object from your hand when you don't need it. 
+// When you playing and the player don't need carry an object and you wanna drop object down anywhere. 
+// You have to use this script which I wrote when I was creating my game for mobile.
+
+
 public class ObjectThrow : MonoBehaviour
 {
     public float Distance = 5;
